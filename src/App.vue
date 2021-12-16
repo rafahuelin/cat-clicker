@@ -1,15 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Cat-Clicker</h1>
+    <div class="container">
+      <Cat @click="increaseCounter" />
+      <Scoreboard :counterValue="counter" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Cat from './components/Cat.vue'
+import Scoreboard from './components/Scoreboard.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Cat,
+    Scoreboard,
+  },
+  data() {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    increaseCounter() {
+      this.counter += 1
+    }
   }
 }
 </script>
@@ -17,10 +34,14 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.container {
+  margin: 20px;
+  width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
 }
 </style>
