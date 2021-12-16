@@ -7,9 +7,7 @@
 <script>
 export default {
   name: 'Scoreboard',
-  props: {
-    counterValue: String
-  }
+  props: ['counterValue']
 }
 </script>
 
