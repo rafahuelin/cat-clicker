@@ -1,26 +1,32 @@
 <template>
   <div>
     <h1>Cat-Clicker</h1>
-    <div class="container">
-      <Cat @click="increaseCounter" />
-      <Scoreboard :counterValue="counter" />
+    <div class="container" :key="cat.name" v-for="cat in cats">
+      <ClickCounter :cat="cat" :imgPath="cat" />
     </div>
   </div>
 </template>
 
 <script>
-import Cat from './components/Cat.vue'
-import Scoreboard from './components/Scoreboard.vue'
+import ClickCounter from './components/ClickCounter.vue'
 
 export default {
   name: 'App',
   components: {
-    Cat,
-    Scoreboard,
+    ClickCounter
   },
   data() {
     return {
-      counter: 0
+      cats: [
+        {
+          name: 'Top Cat',
+          imgName: 'topcat.gif'
+        },
+        {
+          name: 'Benny the Ball',
+          imgName: 'benny_the_ball.jpg'
+        },
+      ]
     }
   },
   methods: {
@@ -37,11 +43,5 @@ export default {
   text-align: center;
 }
 
-.container {
-  margin: 20px;
-  width: 400px;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-}
+
 </style>

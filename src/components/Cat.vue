@@ -1,24 +1,27 @@
 <template>
   <div>
-    <img src="../assets/img/topcat.gif" alt="topcats">
+    <img :src="require('@/assets/img/' + cat.imgName)" :alt="cat.name">
   </div>
 </template>
 
 <script>
 export default {
   name: 'Cat',
-  props: {
-    msg: String
-  }
+  props: ['cat']
 }
 </script>
 
 <style scoped>
 img {
-  border: 4px solid blueviolet;
-  width: 150px;
-  display: flex;
   align-items: center;
+  border: 4px solid blueviolet;
+  cursor: pointer;
+  display: flex;
   justify-content: center;
+  width: 150px;
+}
+
+img:hover {
+  border-color: yellowgreen;
 }
 </style>
