@@ -1,8 +1,8 @@
 <template>
   <div>
     <h3>{{cat.name}}</h3>
-    <Cat @click="increaseCounter" :cat="cat" />
-    <Scoreboard :counterValue="counter" />
+    <Cat @click="$emit('count-click')" :cat="cat" />
+    <Scoreboard :counterValue="cat.count" />
   </div>
 </template>
 
@@ -19,11 +19,6 @@ export default {
   data() {
     return {
       counter: 0
-    }
-  },
-  methods: {
-    increaseCounter() {
-      this.counter += 1
     }
   },
   props: ['cat']

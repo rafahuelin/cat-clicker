@@ -12,12 +12,18 @@ export default {
 </script>
 
 <style scoped>
+div {
+  margin-right: 20px;
+}
+
 img {
   align-items: center;
   border: 4px solid blueviolet;
   cursor: pointer;
   display: flex;
+  height: auto;
   justify-content: center;
+  object-fit: contain;
   width: 150px;
 }
 
