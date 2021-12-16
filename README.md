@@ -1,5 +1,10 @@
 # cat_clicker
 
+## Start dockerized app
+```
+docker-compose up
+```
+
 ## Project setup
 ```
 npm install
