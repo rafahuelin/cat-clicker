@@ -5,6 +5,8 @@
 docker-compose up
 ```
 
+## Open a browser and type localhost:3000
+
 ## Project setup
 ```
 npm install
